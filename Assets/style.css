@@ -1,0 +1,30 @@
+:root {
+    --bg: #273342;
+}
+
+@font-face {
+    font-family: 'ConcertOne';
+    src: url(ConcertOne-Regular.ttf);
+}
+
+body {
+    background-color: var(--bg);
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    color: white;
+}
+
+div#head {
+    background-color: #132030;
+    margin: 0px 0px 0px 0px;
+    padding: 1px 0px 0px 0px;
+    border-bottom: 30px solid;
+    border-image: linear-gradient(to bottom, #132030 97%, var(--bg) 100%) 10;
+}
+
+div#head>h1 {
+    font-size: 5em;
+    text-align: center;
+    text-shadow: 0px 10px 0px #89aec49f;
+    font-family: 'ConcertOne';
+}
