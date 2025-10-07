@@ -5,15 +5,30 @@
             "hacker/binary/mouse.gif"
         ],
         "zip": "hacker/binary/cursors.zip",
-        "downloadName": "binary_cursors.zip"
+        "downloadName": "binary_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "hacker/binary/mouse.gif",
+            "select": "hacker/binary/select.gif",
+            "busy": "hacker/binary/busy.gif",
+            "text": "hacker/binary/text.gif",
+            "work-in-bg": "hacker/binary/wib.gif"
+        }
     },
     {
         "name":"Pikachu Themed Cursors",
         "pics": [
-            "pokemon/pikachu/mouse.jpg"
+            "pokemon/pikachu/mouse.png"
         ],
         "zip": "pokemon/pikachu/cursors.zip",
-        "downloadName": "pikachu_cursors.zip"
+        "downloadName": "pikachu_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "pokemon/pikachu/mouse.png",
+            "select": "pokemon/pikachu/select.png",
+            "busy": "pokemon/pikachu/busy.gif",
+            "text": "pokemon/pikachu/text.png"
+        }
     },
     {
         "name": "Cave Themed Cursors",
