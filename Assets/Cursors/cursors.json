@@ -25,11 +25,83 @@
         "downloadName": "cave_cursors.zip"
     },
     {
+        "name": "Sun Themed Cursors",
+        "pics": [
+            "sun/mouse.jpg"
+        ],
+        "zip": "sun/cursors.zip",
+        "downloadName": "sun_cursors.zip"
+    },
+    {
+        "name": "Beach Themed Cursors",
+        "pics": [
+            "beach/mouse.jpg"
+        ],
+        "zip": "beach/cursors.zip",
+        "downloadName": "beach_cursors.zip"
+    },
+    {
+        "name": "Dinosaur Themed Cursors",
+        "pics": [
+            "dino/mouse.jpg"
+        ],
+        "zip": "dino/cursors.zip",
+        "downloadName": "dino_cursors.zip"
+    },
+    {
         "name": "Hacker Themed Cursors (Legacy)",
         "pics": [
             "hacker/mouse.jpg"
         ],
         "zip": "hacker/cursors.zip",
         "downloadName": "hacker_cursors.zip"
+    },
+    {
+        "name": "Jet Themed Cursors",
+        "pics": [
+            "jet/mouse.jpg"
+        ],
+        "zip": "jet/cursors.zip",
+        "downloadName": "jet_cursors.zip"
+    },
+    {
+        "name": "Leaves Themed Cursors",
+        "pics": [
+            "leaf/mouse.jpg"
+        ],
+        "zip": "leaf/cursors.zip",
+        "downloadName": "leaf_cursors.zip"
+    },
+    {
+        "name": "Medieval Themed Cursors",
+        "pics": [
+            "medieval/mouse.jpg"
+        ],
+        "zip": "medieval/cursors.zip",
+        "downloadName": "medieval_cursors.zip"
+    },
+    {
+        "name": "Moon Themed Cursors",
+        "pics": [
+            "moon/mouse.jpg"
+        ],
+        "zip": "moon/cursors.zip",
+        "downloadName": "moon_cursors.zip"
+    },
+    {
+        "name": "Pizza Themed Cursors",
+        "pics": [
+            "pizza/mouse.jpg"
+        ],
+        "zip": "pizza/cursors.zip",
+        "downloadName": "pizza_cursors_v1.zip"
+    },
+    {
+        "name": "Pizza Themed Cursors Reimagined",
+        "pics": [
+            "pizza/reimagined/mouse.jpg"
+        ],
+        "zip": "pizza/reimagined/cursors.zip",
+        "downloadName": "pizza_cursors_v2.zip"
     }
 ]
