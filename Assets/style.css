@@ -9,11 +9,18 @@
     src: url(ConcertOne-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'Coolvetica';
+    src: url(Coolvetica-Rg.otf);
+}
+
 body {
     background-color: var(--bg);
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     color: white;
+    font-family: 'Coolvetica', Helvetica, sans-serif;
+    letter-spacing: 1px;
 }
 
 div#head {

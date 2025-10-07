@@ -1,0 +1,11 @@
+div#head {
+    border-bottom: 10px solid;
+}
+
+div#head>h1 {
+    font-size: 2.5em;
+}
+
+div.block>h3 {
+    letter-spacing: 2px;
+}
