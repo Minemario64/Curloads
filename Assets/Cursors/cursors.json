@@ -12,7 +12,7 @@
             "select": "hacker/binary/select.gif",
             "busy": "hacker/binary/busy.gif",
             "text": "hacker/binary/text.gif",
-            "work-in-bg": "hacker/binary/wib.gif"
+            "work-in-bg": "hacker/binary/work-in-bg.gif"
         }
     },
     {
@@ -37,28 +37,48 @@
             "cave/mouse-white.jpg"
         ],
         "zip": "cave/cursors.zip",
-        "downloadName": "cave_cursors.zip"
+        "downloadName": "cave_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "cave/mouse-blue.png",
+            "select": "cave/select-white.png",
+            "busy": "cave/busy-blue.gif",
+            "text": "cave/text-white.png"
+        }
     },
     {
         "name": "Sun Themed Cursors",
         "pics": [
-            "sun/mouse.jpg"
+            "sun/mouse.gif"
         ],
         "zip": "sun/cursors.zip",
-        "downloadName": "sun_cursors.zip"
+        "downloadName": "sun_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "sun/mouse.gif",
+            "busy": "sun/busy.gif",
+            "text": "sun/text.gif",
+            "work-in-bg": "sun/work-in-bg.gif"
+        }
     },
     {
         "name": "Beach Themed Cursors",
         "pics": [
-            "beach/mouse.jpg"
+            "beach/mouse.gif"
         ],
         "zip": "beach/cursors.zip",
-        "downloadName": "beach_cursors.zip"
+        "downloadName": "beach_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "beach/mouse.gif",
+            "select": "beach/select.gif",
+            "busy": "beach/busy_tree.gif"
+        }
     },
     {
         "name": "Dinosaur Themed Cursors",
         "pics": [
-            "dino/mouse.jpg"
+            "dino/mouse.png"
         ],
         "zip": "dino/cursors.zip",
         "downloadName": "dino_cursors.zip"
@@ -66,7 +86,7 @@
     {
         "name": "Hacker Themed Cursors (Legacy)",
         "pics": [
-            "hacker/mouse.jpg"
+            "hacker/mouse.gif"
         ],
         "zip": "hacker/cursors.zip",
         "downloadName": "hacker_cursors.zip"
@@ -74,7 +94,7 @@
     {
         "name": "Jet Themed Cursors",
         "pics": [
-            "jet/mouse.jpg"
+            "jet/mouse.png"
         ],
         "zip": "jet/cursors.zip",
         "downloadName": "jet_cursors.zip"
@@ -82,7 +102,7 @@
     {
         "name": "Leaves Themed Cursors",
         "pics": [
-            "leaf/mouse.jpg"
+            "leaf/mouse.png"
         ],
         "zip": "leaf/cursors.zip",
         "downloadName": "leaf_cursors.zip"
@@ -90,7 +110,7 @@
     {
         "name": "Medieval Themed Cursors",
         "pics": [
-            "medieval/mouse.jpg"
+            "medieval/mouse.png"
         ],
         "zip": "medieval/cursors.zip",
         "downloadName": "medieval_cursors.zip"
@@ -98,7 +118,7 @@
     {
         "name": "Moon Themed Cursors",
         "pics": [
-            "moon/mouse.jpg"
+            "moon/mouse.gif"
         ],
         "zip": "moon/cursors.zip",
         "downloadName": "moon_cursors.zip"
@@ -106,7 +126,7 @@
     {
         "name": "Pizza Themed Cursors",
         "pics": [
-            "pizza/mouse.jpg"
+            "pizza/mouse.gif"
         ],
         "zip": "pizza/cursors.zip",
         "downloadName": "pizza_cursors_v1.zip"
@@ -114,7 +134,7 @@
     {
         "name": "Pizza Themed Cursors Reimagined",
         "pics": [
-            "pizza/reimagined/mouse.jpg"
+            "pizza/reimagined/mouse.gif"
         ],
         "zip": "pizza/reimagined/cursors.zip",
         "downloadName": "pizza_cursors_v2.zip"

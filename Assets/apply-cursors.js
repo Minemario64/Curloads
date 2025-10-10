@@ -1,6 +1,7 @@
 let container = document.getElementById('cursor-container');
 const possibleCursorTypes = ["mouse", "select", "busy", "text", "work-in-bg"];
-const cursorsJSONUrl = new URL('./Cursors/cursors.json', import.meta.url).href;
+export const globalCursorsJSONUrl = new URL('./Cursors/cursors.json', import.meta.url).href;
+export const requestCursorsJSONUrl = new URL('./Cursors/requested-cursors.json', import.meta.url).href;
 let cursorsDirUrl = new URL('./Cursors/', import.meta.url);
 
 function loadCursor(name, pictures, zippath, zipName, supportsHover, cursorPreviews) {
@@ -40,23 +41,25 @@ function loadCursor(name, pictures, zippath, zipName, supportsHover, cursorPrevi
     container.appendChild(block);
 };
 
-fetch(cursorsJSONUrl)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(data => {
-        data.forEach(element => {
-            let picpaths = [];
-            element.pics.forEach(picpath => {
-                picpaths.push(cursorsDirUrl.pathname + picpath);
-            });
-            loadCursor(element.name, picpaths, cursorsDirUrl.pathname + element.zip, element.downloadName, element.supportsHover, element.preview);
-    });
-    console.log(data);
-    })
-    .catch(error => {
-        console.error('Error loading JSON:', error);
-    });
+export function loadJSONCursors(cursorsJSONUrl) {
+    fetch(cursorsJSONUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            data.forEach(element => {
+                let picpaths = [];
+                element.pics.forEach(picpath => {
+                    picpaths.push(cursorsDirUrl.pathname + picpath);
+                });
+                loadCursor(element.name, picpaths, cursorsDirUrl.pathname + element.zip, element.downloadName, element.supportsHover, element.preview);
+        });
+        console.log(data);
+        })
+        .catch(error => {
+            console.error('Error loading JSON:', error);
+        });
+};
