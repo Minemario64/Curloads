@@ -81,7 +81,14 @@
             "dino/mouse.png"
         ],
         "zip": "dino/cursors.zip",
-        "downloadName": "dino_cursors.zip"
+        "downloadName": "dino_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "dino/mouse.png",
+            "select": "dino/select.png",
+            "busy": "dino/busy.gif",
+            "work-in-bg": "dino/work-in-bg.gif"
+        }
     },
     {
         "name": "Hacker Themed Cursors (Legacy)",
@@ -89,7 +96,13 @@
             "hacker/mouse.gif"
         ],
         "zip": "hacker/cursors.zip",
-        "downloadName": "hacker_cursors.zip"
+        "downloadName": "hacker_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "hacker/mouse.gif",
+            "select": "hacker/select.gif",
+            "busy": "hacker/busy.gif"
+        }
     },
     {
         "name": "Jet Themed Cursors",
@@ -97,7 +110,14 @@
             "jet/mouse.png"
         ],
         "zip": "jet/cursors.zip",
-        "downloadName": "jet_cursors.zip"
+        "downloadName": "jet_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "jet/mouse.png",
+            "select": "jet/select.gif",
+            "busy": "jet/busy.gif",
+            "work-in-bg": "jet/work-in-bg.gif"
+        }
     },
     {
         "name": "Leaves Themed Cursors",
@@ -105,7 +125,13 @@
             "leaf/mouse.png"
         ],
         "zip": "leaf/cursors.zip",
-        "downloadName": "leaf_cursors.zip"
+        "downloadName": "leaf_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "leaf/mouse.png",
+            "select": "leaf/select.png",
+            "text": "leaf/text.png"
+        }
     },
     {
         "name": "Medieval Themed Cursors",
@@ -113,7 +139,14 @@
             "medieval/mouse.png"
         ],
         "zip": "medieval/cursors.zip",
-        "downloadName": "medieval_cursors.zip"
+        "downloadName": "medieval_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "medieval/mouse.png",
+            "select": "medieval/select.png",
+            "busy": "medieval/busy.gif",
+            "text": "medieval/text.png"
+        }
     },
     {
         "name": "Moon Themed Cursors",
@@ -121,7 +154,14 @@
             "moon/mouse.gif"
         ],
         "zip": "moon/cursors.zip",
-        "downloadName": "moon_cursors.zip"
+        "downloadName": "moon_cursors.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "moon/mouse.gif",
+            "select": "moon/select.gif",
+            "busy": "moon/busy.gif",
+            "text": "moon/text.png"
+        }
     },
     {
         "name": "Pizza Themed Cursors",
@@ -129,7 +169,14 @@
             "pizza/mouse.gif"
         ],
         "zip": "pizza/cursors.zip",
-        "downloadName": "pizza_cursors_v1.zip"
+        "downloadName": "pizza_cursors_v1.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "pizza/mouse.gif",
+            "select": "pizza/select.gif",
+            "busy": "pizza/busy.gif",
+            "text": "pizza/text.png"
+        }
     },
     {
         "name": "Pizza Themed Cursors Reimagined",
@@ -137,6 +184,13 @@
             "pizza/reimagined/mouse.gif"
         ],
         "zip": "pizza/reimagined/cursors.zip",
-        "downloadName": "pizza_cursors_v2.zip"
+        "downloadName": "pizza_cursors_v2.zip",
+        "supportsHover": true,
+        "preview": {
+            "mouse": "pizza/reimagined/mouse.gif",
+            "select": "pizza/reimagined/select.gif",
+            "busy": "pizza/reimagined/busy.gif",
+            "text": "pizza/reimagined/text.png"
+        }
     }
 ]

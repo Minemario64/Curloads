@@ -119,11 +119,11 @@ div.detail-bar {
     gap: 8px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease;
-    -webkit-transition: max-height 0.2s ease;
-    -moz-transition: max-height 0.2s ease;
-    -ms-transition: max-height 0.2s ease;
-    -o-transition: max-height 0.2s ease;
+    transition: max-height 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    -webkit-transition: max-height 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    -moz-transition: max-height 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    -ms-transition: max-height 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+    -o-transition: max-height 0.4s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 div.block:hover>div.detail-bar {
