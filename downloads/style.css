@@ -1,0 +1,34 @@
+div#head {
+    display: flex;
+    background-color: #132030;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 10px 0px;
+    border-bottom: 30px solid;
+    border-bottom: 10px solid;
+    border-image: linear-gradient(to bottom, #132030 97%, var(--bg) 100%) 10;
+}
+
+div#head>h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5em;
+    text-align: center;
+    text-shadow: 0px 5px 0px #89aec49f;
+    font-family: 'ConcertOne';
+}
+
+div#head>a {
+    margin-top: 10px;
+}
+
+div.block>h3 {
+    letter-spacing: 2px;
+}
+
+img:not(.non-cursor) {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/style.css">
+    <link rel="shortcut icon" href="../Assets/Tabicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Curloads - Downloads</title>
+</head>
+<body>
+    <div id="head">
+        <a href="../"><img src="../Assets/icons/home.svg" alt="" width="30px"></a>
+        <h1>Downloads</h1>
+    </div>
+    <div class="container" id="cursor-container">
+    </div>
+
+    <script type="module">
+        import {loadJSONCursors, globalCursorsJSONUrl} from "../Assets/apply-cursors.js";
+        loadJSONCursors(globalCursorsJSONUrl);
+    </script>
+
+</body>
+</html>
