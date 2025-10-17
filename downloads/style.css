@@ -4,7 +4,7 @@ div#head {
     align-items: center;
     justify-content: space-between;
     margin: 0px 0px 0px 0px;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 0px 10px 50px;
     border-bottom: 30px solid;
     border-bottom: 10px solid;
     border-image: linear-gradient(to bottom, #132030 97%, var(--bg) 100%) 10;
@@ -22,6 +22,29 @@ div#head>h1 {
 
 div#head>a {
     margin-top: 10px;
+    opacity: 50%;
+    transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -webkit-transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -moz-transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -ms-transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -o-transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+div#head>a:hover {
+    opacity: 100%;
+}
+
+div#head>a>img {
+    width: 30px;
+    transition: width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -webkit-transition: width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -moz-transition: width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -ms-transition: width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -o-transition: width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+div#head>a>img:hover {
+    width: 40px;
 }
 
 div.block>h3 {
