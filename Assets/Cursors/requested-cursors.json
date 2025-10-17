@@ -1,12 +1,12 @@
 [
     {
+        "id": "pduck",
         "name": "Pink Duck Cursors - Requested by Christian",
         "pics": [
             "requests/pink-duck/mouse.png"
         ],
         "zip": "requests/pink-duck/cursors.zip",
         "downloadName": "pink_duck_cursors.zip",
-        "supportsHover": true,
         "preview": {
             "mouse": "requests/pink-duck/mouse.png",
             "select": "requests/pink-duck/select.png",

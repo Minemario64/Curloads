@@ -86,7 +86,7 @@ a.lnk {
     -o-border-radius: 20px;
 }
 
-div.container:not(#cursor-container) {
+div.container:not(#cursor-container):not(#cursor-preview) {
     justify-content: center;
     justify-self: center;
     display: flex;
@@ -94,11 +94,12 @@ div.container:not(#cursor-container) {
     align-items: center;
 }
 
-div.container#cursor-container {
+div.container#cursor-container:not(#cursor-preview) {
     display: grid;
     align-self: center;
     align-items: center;
     grid-template-columns: repeat(var(--columns), 1fr);
+    margin-bottom: 100px;
 }
 
 div.block>*>.container>img {
@@ -132,7 +133,6 @@ div.block:hover>div.detail-bar {
 
 div.detail-bar>img {
     width: 32px;
-    height: 32px;
 }
 
 .cursor-preview img {
