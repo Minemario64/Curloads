@@ -31,6 +31,21 @@
         }
     },
     {
+        "id": "minecraft",
+        "name": "Minecraft Themed Cursors",
+        "pics": [
+            "minecraft/mouse.png"
+        ],
+        "zip": "minecraft/cursors.zip",
+        "downloadName": "minecraft_cursors.zip",
+        "preview": {
+            "mouse": "minecraft/mouse.png",
+            "select": "minecraft/select.png",
+            "busy": "minecraft/busy.gif",
+            "work-in-bg": "minecraft/wib.gif"
+        }
+    },
+    {
         "id": "cave",
         "name": "Cave Themed Cursors",
         "pics": [
