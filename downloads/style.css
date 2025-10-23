@@ -18,6 +18,10 @@ div#head>h1 {
     text-align: center;
     text-shadow: 0px 5px 0px #89aec49f;
     font-family: 'ConcertOne';
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 div#head>a {

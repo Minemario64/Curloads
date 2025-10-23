@@ -16,6 +16,20 @@
         }
     },
     {
+        "id": "football",
+        "name": "Football Cursors",
+        "pics": [
+            "football/mouse.png"
+        ],
+        "zip": "football/cursors.zip",
+        "downloadName": "football_cursors.zip",
+        "preview": {
+            "mouse": "football/mouse.png",
+            "select": "football/select.gif",
+            "busy": "football/busy.gif"
+        }
+    },
+    {
         "id": "pikachu",
         "name":"Pikachu Themed Cursors",
         "pics": [
