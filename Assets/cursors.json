@@ -1,0 +1,225 @@
+[
+    {
+        "id": "bin",
+        "name": "Binary Themed Cursors",
+        "pics": [
+            "binary/mouse.gif"
+        ],
+        "zip": "binary/cursors.zip",
+        "downloadName": "binary_cursors.zip",
+        "preview": {
+            "mouse": "binary/mouse.gif",
+            "select": "binary/select.gif",
+            "busy": "binary/busy.gif",
+            "text": "binary/text.gif",
+            "work-in-bg": "binary/work-in-bg.gif"
+        }
+    },
+    {
+        "id": "football",
+        "name": "Football Cursors",
+        "pics": [
+            "football/mouse.png"
+        ],
+        "zip": "football/cursors.zip",
+        "downloadName": "football_cursors.zip",
+        "preview": {
+            "mouse": "football/mouse.png",
+            "select": "football/select.gif",
+            "busy": "football/busy.gif"
+        }
+    },
+    {
+        "id": "pikachu",
+        "name":"Pikachu Themed Cursors",
+        "pics": [
+            "pokemon_pikachu/mouse.png"
+        ],
+        "zip": "pokemon_pikachu/cursors.zip",
+        "downloadName": "pikachu_cursors.zip",
+        "preview": {
+            "mouse": "pokemon_pikachu/mouse.png",
+            "select": "pokemon_pikachu/select.png",
+            "busy": "pokemon_pikachu/busy.gif",
+            "text": "pokemon_pikachu/text.png"
+        }
+    },
+    {
+        "id": "minecraft",
+        "name": "Minecraft Themed Cursors",
+        "pics": [
+            "minecraft/mouse.png"
+        ],
+        "zip": "minecraft/cursors.zip",
+        "downloadName": "minecraft_cursors.zip",
+        "preview": {
+            "mouse": "minecraft/mouse.png",
+            "select": "minecraft/select.png",
+            "busy": "minecraft/busy.gif",
+            "work-in-bg": "minecraft/wib.gif"
+        }
+    },
+    {
+        "id": "cave",
+        "name": "Cave Themed Cursors",
+        "pics": [
+            "cave/mouse-blue.png",
+            "cave/mouse-white.png"
+        ],
+        "zip": "cave/cursors.zip",
+        "downloadName": "cave_cursors.zip",
+        "preview": {
+            "mouse": "cave/mouse-blue.png",
+            "select": "cave/select-white.png",
+            "busy": "cave/busy-blue.gif",
+            "text": "cave/text-white.png"
+        }
+    },
+    {
+        "id": "sun",
+        "name": "Sun Themed Cursors",
+        "pics": [
+            "sun/mouse.gif"
+        ],
+        "zip": "sun/cursors.zip",
+        "downloadName": "sun_cursors.zip",
+        "preview": {
+            "mouse": "sun/mouse.gif",
+            "busy": "sun/busy.gif",
+            "text": "sun/text.gif",
+            "work-in-bg": "sun/work-in-bg.gif"
+        }
+    },
+    {
+        "id": "beach",
+        "name": "Beach Themed Cursors",
+        "pics": [
+            "beach/mouse.gif"
+        ],
+        "zip": "beach/cursors.zip",
+        "downloadName": "beach_cursors.zip",
+        "preview": {
+            "mouse": "beach/mouse.gif",
+            "select": "beach/select.gif",
+            "busy": "beach/busy_tree.gif"
+        }
+    },
+    {
+        "id": "dino",
+        "name": "Dinosaur Themed Cursors",
+        "pics": [
+            "dino/mouse.png"
+        ],
+        "zip": "dino/cursors.zip",
+        "downloadName": "dino_cursors.zip",
+        "preview": {
+            "mouse": "dino/mouse.png",
+            "select": "dino/select.png",
+            "busy": "dino/busy.gif",
+            "work-in-bg": "dino/work-in-bg.gif"
+        }
+    },
+    {
+        "id": "hacker",
+        "name": "Hacker Themed Cursors (Legacy)",
+        "pics": [
+            "hacker/mouse.gif"
+        ],
+        "zip": "hacker/cursors.zip",
+        "downloadName": "hacker_cursors.zip",
+        "preview": {
+            "mouse": "hacker/mouse.gif",
+            "select": "hacker/select.gif",
+            "busy": "hacker/busy.gif"
+        }
+    },
+    {
+        "id": "jet",
+        "name": "Jet Themed Cursors",
+        "pics": [
+            "jet/mouse.png"
+        ],
+        "zip": "jet/cursors.zip",
+        "downloadName": "jet_cursors.zip",
+        "preview": {
+            "mouse": "jet/mouse.png",
+            "select": "jet/select.gif",
+            "busy": "jet/busy.gif",
+            "work-in-bg": "jet/work-in-bg.gif"
+        }
+    },
+    {
+        "id": "leaf",
+        "name": "Leaves Themed Cursors",
+        "pics": [
+            "leaf/mouse.png"
+        ],
+        "zip": "leaf/cursors.zip",
+        "downloadName": "leaf_cursors.zip",
+        "preview": {
+            "mouse": "leaf/mouse.png",
+            "select": "leaf/select.png",
+            "text": "leaf/text.png"
+        }
+    },
+    {
+        "id": "medieval",
+        "name": "Medieval Themed Cursors",
+        "pics": [
+            "medieval/mouse.png"
+        ],
+        "zip": "medieval/cursors.zip",
+        "downloadName": "medieval_cursors.zip",
+        "preview": {
+            "mouse": "medieval/mouse.png",
+            "select": "medieval/select.png",
+            "busy": "medieval/busy.gif",
+            "text": "medieval/text.png"
+        }
+    },
+    {
+        "id": "moon",
+        "name": "Moon Themed Cursors",
+        "pics": [
+            "moon/mouse.gif"
+        ],
+        "zip": "moon/cursors.zip",
+        "downloadName": "moon_cursors.zip",
+        "preview": {
+            "mouse": "moon/mouse.gif",
+            "select": "moon/select.gif",
+            "busy": "moon/busy.gif",
+            "text": "moon/text.png"
+        }
+    },
+    {
+        "id": "pizzaV1",
+        "name": "Pizza Themed Cursors",
+        "pics": [
+            "pizza_v1/mouse.gif"
+        ],
+        "zip": "pizza_v1/cursors.zip",
+        "downloadName": "pizza_cursors_v1.zip",
+        "preview": {
+            "mouse": "pizza_v1/mouse.gif",
+            "select": "pizza_v1/select.gif",
+            "busy": "pizza_v1/busy.gif",
+            "text": "pizza_v1/text.png"
+        }
+    },
+    {
+        "id": "pizzaV2",
+        "name": "Pizza Themed Cursors Reimagined",
+        "pics": [
+            "pizza_v2/mouse.gif"
+        ],
+        "zip": "pizza_v2/cursors.zip",
+        "downloadName": "pizza_cursors_v2.zip",
+        "preview": {
+            "mouse": "pizza_v2/mouse.gif",
+            "select": "pizza_v2/select.gif",
+            "busy": "pizza_v2/busy.gif",
+            "text": "pizza_v2/text.png"
+        }
+    }
+]

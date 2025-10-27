@@ -12,7 +12,7 @@
     }
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 1356px) {
     :root {
         --columns: 5;
     }
@@ -25,7 +25,8 @@
 
 @font-face {
     font-family: 'Coolvetica';
-    src: url(Coolvetica-Rg.otf);
+    src: url(arial_narrow_7.ttf);
+    font-weight: 900;
 }
 
 body {
@@ -34,7 +35,6 @@ body {
     padding: 0px 0px 0px 0px;
     color: white;
     font-family: 'Coolvetica', Helvetica, sans-serif;
-    letter-spacing: 1px;
 }
 
 div#head {
@@ -86,7 +86,22 @@ a.lnk {
     -o-border-radius: 20px;
 }
 
-div.container:not(#cursor-container):not(#cursor-preview) {
+button {
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    background-color: var(--link);
+    border-radius: 20px;
+    border: none;
+    font-family: 'Coolvetica', Helvetica, sans-serif;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+div.container:not(#cursor-container):not(#cursor-preview):not(#cursor-mixer) {
     justify-content: center;
     justify-self: center;
     display: flex;
@@ -94,7 +109,7 @@ div.container:not(#cursor-container):not(#cursor-preview) {
     align-items: center;
 }
 
-div.container#cursor-container:not(#cursor-preview) {
+div.container#cursor-container:not(#cursor-preview):not(#cursor-mixer) {
     display: grid;
     align-self: center;
     align-items: center;

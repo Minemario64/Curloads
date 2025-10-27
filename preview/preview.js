@@ -5,9 +5,10 @@ const possibleCursorTypes = ["mouse", "select", "busy", "text", "work-in-bg"];
 const cursorTypeNames = ["Mouse", "Select", "Busy", "Text", "Work in Background"];
 const headerTitle = document.getElementById("head").getElementsByTagName("h1").item(0);
 const backLnk = document.getElementById("head").getElementsByTagName("a").item(0);
-const globalCursorsJSONUrl = new URL('../Assets/Cursors/cursors.json', import.meta.url).href;
-const requestCursorsJSONUrl = new URL('../Assets/Cursors/requested-cursors.json', import.meta.url).href;
-const cursorsDirUrl = new URL('../Assets/Cursors/', import.meta.url);
+const globalCursorsJSONUrl = new URL('../Assets/cursors.json', import.meta.url).href;
+const requestCursorsJSONUrl = new URL('../Assets/requested-cursors.json', import.meta.url).href;
+const cursorsDirUrl = new URL('../api/assets/cursorImgs/', import.meta.url);
+const zipDirUrl = new URL("../api/assets/cursorSets/", import.meta.url);
 const container = document.getElementById("cursor-preview")
 
 function loadCursor(name, zippath, zipName, cursorPreviews) {
@@ -53,7 +54,7 @@ function loadJSONCursors(cursorsJSONUrl) {
         .then(data => {
             data.forEach(element => {
                 if (element.id === cursor) {
-                    loadCursor(element.name, cursorsDirUrl.pathname + element.zip, element.downloadName, element.preview);
+                    loadCursor(element.name, zipDirUrl.pathname + element.zip, element.downloadName, element.preview);
             }
         });
         })

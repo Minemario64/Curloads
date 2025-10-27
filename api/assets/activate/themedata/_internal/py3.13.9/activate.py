@@ -1,0 +1,55 @@
+print("Running...")
+
+from makeTemplate import makeThemeFromRep, Path, os, importFromJSON
+from copy import deepcopy
+
+def exportToJSON(data: dict, filename: str | Path, indent : bool = True) -> None:
+    from json import dumps, dump
+
+    filepath = Path(filename) if isinstance(filename, str) else filename
+    if filepath.exists():
+        if indent:
+            with open(filepath, "w") as file:
+                file.write(dumps(data, indent=4))
+        else:
+            with open(filepath, "w") as file:
+                dump(data, file)
+
+repPath: Path = Path("../../theme.rep").resolve()
+initJSON: dict[str, str | dict[str, str]] = importFromJSON(repPath)
+base: dict[str, str | dict[str, str]] = deepcopy(initJSON)
+pathname: str = initJSON['pathname'] # type: ignore
+themePath: Path = Path("myTheme.theme").resolve()
+rootPath: Path = Path("../../../").resolve()
+normThemePath: Path = Path(os.path.expandvars(fr"%localappdata%\Microsoft\Windows\Themes\curTheme_{pathname}.theme")).resolve()
+if initJSON.get("cursor") is not None:
+    setPath: Path = Path.home().joinpath(f"Documents/cursors/{pathname}")
+    setPath.mkdir(exist_ok=True, parents=True)
+    for key, path in initJSON['cursor'].items(): # type: ignore
+        with rootPath.joinpath(path).open("rb") as file:
+            curContent: bytes = file.read()
+
+        docPath = setPath.joinpath(path)
+        docPath.touch()
+        with docPath.open("wb") as file:
+            file.write(curContent)
+
+        initJSON['cursor'][key] = str(docPath.resolve()) # type: ignore
+
+exportToJSON(initJSON, repPath)
+
+if not normThemePath.exists():
+    print("Creating Theme Path...")
+    makeThemeFromRep(repPath)
+    with themePath.open("r", encoding="utf-8") as file:
+        content: str = file.read()
+
+    themePath.unlink()
+    normThemePath.touch()
+    with normThemePath.open("w", encoding="utf-8") as file:
+        file.write(content)
+
+exportToJSON(base, repPath)
+
+os.chdir(str(normThemePath.parent.resolve()))
+os.system(fr"powershell .\{normThemePath.name}")

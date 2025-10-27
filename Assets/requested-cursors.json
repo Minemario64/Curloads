@@ -1,0 +1,17 @@
+[
+    {
+        "id": "pduck",
+        "name": "Pink Duck Cursors - Requested by Christian",
+        "pics": [
+            "requests_pink-duck/mouse.png"
+        ],
+        "zip": "requests_pink-duck/cursors.zip",
+        "downloadName": "pink_duck_cursors.zip",
+        "preview": {
+            "mouse": "requests_pink-duck/mouse.png",
+            "select": "requests_pink-duck/select.png",
+            "busy": "requests_pink-duck/busy.gif",
+            "text": "requests_pink-duck/text.png"
+        }
+    }
+]

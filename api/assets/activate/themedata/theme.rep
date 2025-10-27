@@ -1,0 +1,9 @@
+{
+    "cursor": {
+        "mouse": "mouse.ani",
+        "select": "select.ani",
+        "busy": "busy_tree.ani"
+    },
+    "pathname": "beach",
+    "name": "Curloads - Beach Cursors"
+}
