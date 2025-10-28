@@ -1,7 +1,8 @@
-const getCursorsApiUrl = 'http://127.0.0.1:5000/cursors/';
-const zipApiUrl = 'http://127.0.0.1:5000/mix';
 const rootUrl = new URL("../", import.meta.url);
+const ipLogUrl = new URL("../ip", import.meta.url,);
 const zipDirUrl = new URL("../api/temp/", import.meta.url);
+let getCursorsApiUrl = 'http://$[IPV4]:5000/cursors/';
+let zipApiUrl = 'http://$[IPV4]:5000/mix';
 
 function loadCursorImgsFromApi(filter, selectElement) {
     fetch(getCursorsApiUrl + `imgs?mode=flatten&filter=${filter}`)
@@ -80,68 +81,101 @@ const textImg = document.getElementById("text-img");
 const wibSelect = document.getElementById("wib-sel");
 const wibImg = document.getElementById("wib-img");
 
-loadCursorImgsFromApi("mouse", mouseSelect);
-applyImgConstant(mouseSelect, mouseImg);
+fetch(ipLogUrl)
+.then(response => {
+    if (!response.ok) {
+        throw new Error("Cannot get IP Log (status not ok). Mix Maker cannot run");
+    }
+    return response.text();
+})
+.then(ip => {
+    console.log(ip);
+    getCursorsApiUrl = getCursorsApiUrl.replace("$[IPV4]", ip);
+    zipApiUrl = zipApiUrl.replace("$[IPV4]", ip);
+    console.log(getCursorsApiUrl);
 
-loadCursorImgsFromApi("select", selectSelect);
-applyImgConstant(selectSelect, selectImg);
+    loadCursorImgsFromApi("mouse", mouseSelect);
+    applyImgConstant(mouseSelect, mouseImg);
 
-loadCursorImgsFromApi("busy", busySelect);
-applyImgConstant(busySelect, busyImg);
+    loadCursorImgsFromApi("select", selectSelect);
+    applyImgConstant(selectSelect, selectImg);
 
-loadCursorImgsFromApi("text", textSelect);
-applyImgConstant(textSelect, textImg);
+    loadCursorImgsFromApi("busy", busySelect);
+    applyImgConstant(busySelect, busyImg);
 
-loadCursorImgsFromApi("wib", wibSelect);
-applyImgConstant(wibSelect, wibImg);
+    loadCursorImgsFromApi("text", textSelect);
+    applyImgConstant(textSelect, textImg);
 
-const downloadButton = document.getElementById("mix-download")
+    loadCursorImgsFromApi("wib", wibSelect);
+    applyImgConstant(wibSelect, wibImg);
 
-downloadButton.addEventListener("click", () => {
-    let selections = {
-        mouse: mouseSelect.value,
-        select: selectSelect.value,
-        busy: busySelect.value,
-        text: textSelect.value,
-        wib: wibSelect.value,
-    };
+    const downloadButton = document.getElementById("mix-download");
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('close-popup');
 
-    fetch(zipApiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(Object.entries(selections).filter(([_, path]) => !!path)))
+    downloadButton.addEventListener("click", () => {
+        setTimeout(() => {
+            popup.style.display = 'flex';
+            popup.style.opacity = '1.0';
+        }, 500)
+        let selections = {
+            mouse: mouseSelect.value,
+            select: selectSelect.value,
+            busy: busySelect.value,
+            text: textSelect.value,
+            wib: wibSelect.value,
+        };
+
+        fetch(zipApiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(Object.fromEntries(Object.entries(selections).filter(([_, path]) => !!path)))
+        })
+        .then(response => {
+            if (response.status !== 201) {
+                throw new Error("Mix Zipper response was not ok");
+            }
+            return response.json();
+        })
+        .then((zipPath) => {
+            let lnk = document.createElement("a");
+            lnk.href = zipDirUrl.pathname + zipPath.url;
+            lnk.download = "mix-maker-cursors.zip";
+            document.body.appendChild(lnk);
+            lnk.click();
+            document.body.removeChild(lnk);
+        })
     })
-    .then(response => {
-        if (response.status !== 201) {
-            throw new Error("Mix Zipper response was not ok");
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === popup) {
+            popup.style.display = 'none';
         }
-        return response.json();
+    });
+
+    downloadButton.addEventListener("mousedown", () => {
+        downloadButton.style.padding = "7px";
+        downloadButton.style.margin = "6px";
     })
-    .then((zipPath) => {
-        let lnk = document.createElement("a");
-        lnk.href = zipDirUrl.pathname + zipPath.url;
-        lnk.download = "mix-maker-cursors.zip";
-        document.body.appendChild(lnk);
-        lnk.click();
-        document.body.removeChild(lnk);
-    })
-})
 
-downloadButton.addEventListener("mousedown", () => {
-    downloadButton.style.padding = "7px";
-    downloadButton.style.margin = "6px";
-})
-
-downloadButton.addEventListener('mouseleave', () => {
-    downloadButton.style.padding = '10px';
-    downloadButton.style.margin = "3px";
-})
-
-downloadButton.addEventListener('mouseup', () => {
-    downloadButton.style.padding = '13px';
-    downloadButton.style.margin = "0px";
-    setTimeout(() => {
+    downloadButton.addEventListener('mouseleave', () => {
         downloadButton.style.padding = '10px';
-        downloadButton.style.margin = '3px';
-    }, 150)
+        downloadButton.style.margin = "3px";
+    })
+
+    downloadButton.addEventListener('mouseup', () => {
+        downloadButton.style.padding = '13px';
+        downloadButton.style.margin = "0px";
+        setTimeout(() => {
+            downloadButton.style.padding = '10px';
+            downloadButton.style.margin = '3px';
+        }, 150)
+    })
+})
+.catch(error => {
+    console.error("IP Fetch Error:", error)
 })

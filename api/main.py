@@ -196,7 +196,7 @@ if __name__ == "__main__":
         rmFilesRec(Path("temp/"))
 
     Path("temp/gather/").mkdir(parents=True)
-    app.run(debug=True)
+    app.run(host="0.0.0.0")
     print("Killing...")
     import os
     os.system("rm.bat")

@@ -31,3 +31,12 @@ div.detail-bar>img {
 div.block:hover>div.detail-bar {
     max-height: 500px;
 }
+
+button {
+    transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -webkit-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -moz-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -ms-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -o-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    margin: 3px;
+}

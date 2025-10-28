@@ -9,7 +9,7 @@ const globalCursorsJSONUrl = new URL('../Assets/cursors.json', import.meta.url).
 const requestCursorsJSONUrl = new URL('../Assets/requested-cursors.json', import.meta.url).href;
 const cursorsDirUrl = new URL('../api/assets/cursorImgs/', import.meta.url);
 const zipDirUrl = new URL("../api/assets/cursorSets/", import.meta.url);
-const container = document.getElementById("cursor-preview")
+const container = document.getElementById("cursor-preview");
 
 function loadCursor(name, zippath, zipName, cursorPreviews) {
     document.title = `Curloads - ${name}`;
@@ -34,12 +34,53 @@ function loadCursor(name, zippath, zipName, cursorPreviews) {
         setDetails.appendChild(part);
     }
     block.appendChild(setDetails);
-    let lnk = document.createElement("a");
-    lnk.className = "lnk";
-    lnk.innerHTML = "Download Cursor Set";
-    lnk.href = zippath;
-    lnk.download = zipName;
-    block.appendChild(lnk);
+    let btn = document.createElement("button");
+    btn.innerHTML = "Download Cursor Set";
+    btn.addEventListener("click", () => {
+        const lnk = document.createElement("a");
+        lnk.href = zippath;
+        lnk.download = zipName;
+        document.body.appendChild(lnk);
+        lnk.click();
+        document.body.removeChild(lnk);
+        setTimeout(() => {
+            popup.style.display = 'flex';
+            popup.style.opacity = '1.0';
+        }, 500)
+    });
+
+    btn.addEventListener("mousedown", () => {
+        btn.style.padding = "7px";
+        btn.style.margin = "6px";
+    });
+
+    btn.addEventListener('mouseleave', () => {
+        btn.style.padding = '10px';
+        btn.style.margin = "3px";
+    });
+
+    btn.addEventListener('mouseup', () => {
+        btn.style.padding = '13px';
+        btn.style.margin = "0px";
+        setTimeout(() => {
+            btn.style.padding = '10px';
+            btn.style.margin = '3px';
+        }, 150)
+    });
+    block.appendChild(btn);
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('close-popup');
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+
     container.appendChild(block);
 };
 
