@@ -45,11 +45,11 @@ if not normThemePath.exists():
         content: str = file.read()
 
     themePath.unlink()
+    normThemePath.parent.mkdir(parents=True, exist_ok=True)
     normThemePath.touch()
     with normThemePath.open("w", encoding="utf-8") as file:
         file.write(content)
 
 exportToJSON(base, repPath)
 
-os.chdir(str(normThemePath.parent.resolve()))
-os.system(fr"powershell .\{normThemePath.name}")
+os.startfile(normThemePath.resolve())

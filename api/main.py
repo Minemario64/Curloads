@@ -1,9 +1,18 @@
-from zipping import zipPaths
+import os
+try:
+    from zipping import zipPaths
+except ModuleNotFoundError:
+    from .zipping import zipPaths
+    os.chdir("api")
+
 from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 from pathlib import Path
 from typing import Any
-from gentraverse import genLookup
+try:
+    from gentraverse import genLookup
+except ModuleNotFoundError:
+    from .gentraverse import genLookup
 from json import dumps
 from copy import deepcopy
 
@@ -87,9 +96,9 @@ CORS(app)
 
 mixId: int = 0
 
-CURSOR_SETS: dict[str, dict[str, Path | list[Path]]] = genLookup(Path("assets/cursors"), [".cur", '.ani'])
-CURSOR_IMGS: dict[str, dict[str, Path | list[Path]]] = genLookup(Path("assets/cursorImgs"), ['.png', '.gif'])
-CURSOR_NAMES: dict[str, dict[str, Path | list[Path]]] = genLookup(Path("assets/cursorSets"), [".txt"])
+CURSOR_SETS: dict[str, dict[str, Path | list[Path]]] = genLookup(Path("assets/cursors"), [".cur", '.ani'], Path("../").resolve())
+CURSOR_IMGS: dict[str, dict[str, Path | list[Path]]] = genLookup(Path("assets/cursorImgs"), ['.png', '.gif'], Path("../").resolve())
+CURSOR_NAMES: dict[str, dict[str, Path | list[Path]]] = genLookup(Path("assets/cursorSets"), [".txt"], Path("../").resolve())
 
 def lookupCurPath(path: str) -> Path | None:
     evalStr: str = "lookup"
