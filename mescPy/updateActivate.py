@@ -2,9 +2,17 @@ from pathlib import Path
 from zipfile import ZipFile
 from api.zipping import zipPaths
 from api.gentraverse import genLookup
+import sys
 
-def copyFilesRec(dirPath: Path, copyDirPath: Path) -> None:
+MODE: int = 0
+if len(sys.argv) == 2 and (sys.argv[1] == "--keep" or sys.argv[1] == "-k"):
+    MODE = 1
+
+def copyFilesRec(dirPath: Path, copyDirPath: Path, excludedNames: list[str] = []) -> None:
     for path in dirPath.iterdir():
+        if path.name in excludedNames:
+            continue
+
         if path.is_file():
             mirrorPath: Path = copyDirPath.joinpath(path.name)
             mirrorPath.touch()
@@ -43,18 +51,27 @@ if ACTIVATE_PATH.exists():
 ACTIVATE_PATH.mkdir()
 copyFilesRec(PROD_PATH, ACTIVATE_PATH)
 
-TMP_PATH.mkdir()
+if MODE == 1:
+    TMP_PATH.mkdir(exist_ok=True)
+else:
+    TMP_PATH.mkdir()
+
 for dirname in genLookup(CURZIP_ASSET_PATH, ['.txt'], ROOT_PATH):
     zipPath = CURZIP_ASSET_PATH.joinpath(dirname).joinpath("cursors.zip")
     if not zipPath.exists():
+        continue
+
+    if TMP_PATH.joinpath(dirname).exists() and MODE == 1:
         continue
 
     with ZipFile(zipPath) as zipFile:
         zipFile.extractall(TMP_PATH.joinpath(dirname))
 
     if TMP_PATH.joinpath(dirname).joinpath("themedata").exists():
-        rmFilesRec(TMP_PATH.joinpath(dirname).joinpath("themedata"))
-        TMP_PATH.joinpath(dirname).joinpath("activate.bat").unlink()
-        copyFilesRec(ACTIVATE_PATH, TMP_PATH.joinpath(dirname))
-
+        rmFilesRec(TMP_PATH.joinpath(dirname).joinpath("themedata/_internal"))
+        TMP_PATH.joinpath(dirname).joinpath("install.bat").unlink(True)
+        TMP_PATH.joinpath(dirname).joinpath("uninstall.bat").unlink(True)
+        TMP_PATH.joinpath(dirname).joinpath("themedata/_internal").mkdir()
+        copyFilesRec(ACTIVATE_PATH.joinpath("themedata/_internal"), TMP_PATH.joinpath(dirname).joinpath("themedata/_internal"))
+        copyFilesRec(ACTIVATE_PATH, TMP_PATH.joinpath(dirname), ["themedata"])
         zipPaths(TMP_PATH.joinpath(dirname).iterdir(), zipPath, TMP_PATH.joinpath(dirname))

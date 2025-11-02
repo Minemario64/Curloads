@@ -1,5 +1,5 @@
 let container = document.getElementById('cursor-container');
-const possibleCursorTypes = ["mouse", "select", "busy", "text", "work-in-bg"];
+const possibleCursorTypes = ["mouse", "select", "busy", "text", "work-in-bg", "arrow-all", "arrow-nesw", "arrow-nwse", "arrow-ns", "arrow-ew"];
 export const globalCursorsJSONUrl = new URL('./cursors.json', import.meta.url).href;
 export const requestCursorsJSONUrl = new URL('./requested-cursors.json', import.meta.url).href;
 const cursorsDirUrl = new URL('../api/assets/cursorImgs/', import.meta.url);

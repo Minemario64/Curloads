@@ -21,7 +21,12 @@ templateReplaceKeys: dict[str, str] = {
     "busy": r"%__--==(\x6)BSY__--==--__%",
     "wallpaper": r"%__--==(\x7)WLL__--==--__%",
     "mode": r"%__--==(\x8)MDE__--==--__%",
-    "screensaver": r"%__--==(\x9)SCR__--==--__%"
+    "screensaver": r"%__--==(\x9)SCR__--==--__%",
+    "arrow-all": r"%__--==(\x10)ALL__--==--__%",
+    "arrow-nesw": r"%__--==(\x11)NSW_--==--__%",
+    "arrow-nwse": r"%__--==(\x12)NSE__--==--__%",
+    "arrow-ns": r"%__--==(\x13)NSA__--==--__%",
+    "arrow-ew": r"%__--==(\x14)EWA__--==--__%"
 }
 
 defaultCursorPaths: dict[str, str] = {
@@ -30,6 +35,11 @@ defaultCursorPaths: dict[str, str] = {
     "select": r"%SystemRoot%\cursors\aero_link.cur",
     "text": r"",
     "busy": r"%SystemRoot%\cursors\aero_busy.ani",
+    "arrow-all": r"%SystemRoot%\cursors\aero_move.cur",
+    "arrow-nesw": r"%SystemRoot%\cursors\aero_nesw.cur",
+    "arrow-nwse": r"%SystemRoot%\cursors\aero_nwse.cur",
+    "arrow-ns": r"%SystemRoot%\cursors\aero_ns.cur",
+    "arrow-ew": r"%SystemRoot%\cursors\aero_ew.cur"
 }
 
 # Colors for decoding Theme color

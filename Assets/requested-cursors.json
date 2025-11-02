@@ -1,7 +1,7 @@
 [
     {
         "id": "pduck",
-        "name": "Pink Duck Cursors - Requested by Christian",
+        "name": "Pink Duck Cursors",
         "pics": [
             "requests_pink-duck/mouse.png"
         ],
@@ -12,6 +12,41 @@
             "select": "requests_pink-duck/select.png",
             "busy": "requests_pink-duck/busy.gif",
             "text": "requests_pink-duck/text.png"
+        }
+    },
+    {
+        "id": "pig",
+        "name": "Pig Cursors",
+        "pics": [
+            "requests_pig/mouse.png"
+        ],
+        "zip": "requests_pig/cursors.zip",
+        "downloadName": "pig_cursors.zip",
+        "preview": {
+            "mouse": "requests_pig/mouse.png",
+            "select": "requests_pig/select.gif",
+            "busy": "requests_pig/busy.gif",
+            "work-in-bg": "requests_pig/wib.gif"
+        }
+    },
+    {
+        "id": "lbc",
+        "name": "Sustainability Cursors",
+        "pics": [
+            "requests_sustainability/mouse.png"
+        ],
+        "zip": "requests_sustainability/cursors.zip",
+        "downloadName": "sustainability_cursors.zip",
+        "preview": {
+            "mouse": "requests_sustainability/mouse.png",
+            "select": "requests_sustainability/select.png",
+            "busy": "requests_sustainability/busy.gif",
+            "work-in-bg": "requests_sustainability/wib.gif",
+            "arrow-all": "requests_sustainability/arrow-all.png",
+            "arrow-nesw": "requests_sustainability/arrow-nesw.png",
+            "arrow-nwse": "requests_sustainability/arrow-nwse.png",
+            "arrow-ns": "requests_sustainability/arrow-ns.png",
+            "arrow-ew": "requests_sustainability/arrow-ew.png"
         }
     }
 ]

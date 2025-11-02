@@ -16,8 +16,8 @@ except ModuleNotFoundError:
 from json import dumps
 from copy import deepcopy
 
-def copyFile(filepath: Path, copyDirPath: Path) -> None:
-    mirrorPath: Path = copyDirPath.joinpath(filepath.name)
+def copyFile(filepath: Path, copyDirPath: Path, name: str | None = None) -> None:
+    mirrorPath: Path = copyDirPath.joinpath(filepath.name if name is None else name)
     mirrorPath.touch()
     with filepath.open("rb") as file:
         content: bytes = file.read()

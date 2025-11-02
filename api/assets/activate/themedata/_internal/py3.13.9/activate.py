@@ -21,6 +21,7 @@ base: dict[str, str | dict[str, str]] = deepcopy(initJSON)
 pathname: str = initJSON['pathname'] # type: ignore
 themePath: Path = Path("myTheme.theme").resolve()
 rootPath: Path = Path("../../../").resolve()
+installPathLogPath: Path = Path("installPath").resolve()
 normThemePath: Path = Path(os.path.expandvars(fr"%localappdata%\Microsoft\Windows\Themes\curTheme_{pathname}.theme")).resolve()
 if initJSON.get("cursor") is not None:
     setPath: Path = Path.home().joinpath(f"Documents/cursors/{pathname}")
@@ -51,5 +52,11 @@ if not normThemePath.exists():
         file.write(content)
 
 exportToJSON(base, repPath)
+
+if not installPathLogPath.exists():
+    installPathLogPath.touch()
+
+with installPathLogPath.open("w") as log:
+    log.write(str(normThemePath.resolve()))
 
 os.startfile(normThemePath.resolve())

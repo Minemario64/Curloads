@@ -1,8 +1,8 @@
 const params = new URLSearchParams(window.location.search);
 const cursor = params.get("cur");
 const type = params.get("type");
-const possibleCursorTypes = ["mouse", "select", "busy", "text", "work-in-bg"];
-const cursorTypeNames = ["Mouse", "Select", "Busy", "Text", "Work in Background"];
+const possibleCursorTypes = ["mouse", "select", "busy", "text", "work-in-bg", "arrow-all", "arrow-nesw", "arrow-nwse", "arrow-ns", "arrow-ew"];
+const cursorTypeNames = ["Mouse", "Select", "Busy", "Text", "Work in Background", "Move", "Diagonal Arrow 1", "Diagonal Arrow 2", "Arrow Vertical", "Arrow Horizontal"];
 const headerTitle = document.getElementById("head").getElementsByTagName("h1").item(0);
 const backLnk = document.getElementById("head").getElementsByTagName("a").item(0);
 const globalCursorsJSONUrl = new URL('../Assets/cursors.json', import.meta.url).href;
