@@ -22,7 +22,7 @@ pathname: str = initJSON['pathname'] # type: ignore
 themePath: Path = Path("myTheme.theme").resolve()
 rootPath: Path = Path("../../../").resolve()
 installPathLogPath: Path = Path("installPath").resolve()
-normThemePath: Path = Path(os.path.expandvars(fr"%localappdata%\Microsoft\Windows\Themes\curTheme_{pathname}.theme")).resolve()
+normThemePath: Path = Path(os.path.expandvars(fr"%localappdata%\Microsoft\Windows\Themes\curTheme_{pathname.split("/")[-1]}.theme")).resolve()
 if initJSON.get("cursor") is not None:
     setPath: Path = Path.home().joinpath(f"Documents/cursors/{pathname}")
     setPath.mkdir(exist_ok=True, parents=True)
