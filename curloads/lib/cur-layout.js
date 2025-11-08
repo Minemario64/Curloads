@@ -1,8 +1,7 @@
+import {possibleCursorTypes, curImgsDirUrl, globalCursorsJSONUrl, requestCursorsJSONUrl} from "./globals.js";
+import {loadJSONRunFunc} from "../../lib/json-elements.js";
+
 let container = document.getElementById('cursor-container');
-const possibleCursorTypes = ["mouse", "select", "busy", "text", "work-in-bg", "arrow-all", "arrow-nesw", "arrow-nwse", "arrow-ns", "arrow-ew"];
-export const globalCursorsJSONUrl = new URL('./cursors.json', import.meta.url).href;
-export const requestCursorsJSONUrl = new URL('./requested-cursors.json', import.meta.url).href;
-const cursorsDirUrl = new URL('../api/assets/cursorImgs/', import.meta.url);
 const previewUrl = new URL('../preview/', import.meta.url).href;
 
 function loadCursor(name, previewType, pictures, id, cursorPreviews) {
@@ -30,31 +29,32 @@ function loadCursor(name, previewType, pictures, id, cursorPreviews) {
         }
         let cursorImg = document.createElement("img");
         cursorImg.className = 'cursor-preview';
-        cursorImg.src = cursorsDirUrl.pathname + cursorPreviews[type];
+        cursorImg.src = curImgsDirUrl.pathname + cursorPreviews[type];
         setDetails.appendChild(cursorImg);
     }
     block.appendChild(setDetails)
     container.appendChild(block);
 };
 
-export function loadJSONCursors(cursorsJSONUrl, type) {
-    fetch(cursorsJSONUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
+export function loadJSONCursors(type) {
+    switch (type) {
+        case "main":
+            var jsonUrl = globalCursorsJSONUrl;
+            var debugName = 'MAIN';
+            break;
+
+        case "requests":
+            var jsonUrl = requestCursorsJSONUrl;
+            var debugName = 'REQ';
+            break;
+    }
+    loadJSONRunFunc(jsonUrl, data => {
+        data.forEach(element => {
+            let picpaths = [];
+            element.pics.forEach(picpath => {
+                picpaths.push(curImgsDirUrl.pathname + picpath);
+            });
+            loadCursor(element.name, type, picpaths, element.id, element.preview);
         })
-        .then(data => {
-            data.forEach(element => {
-                let picpaths = [];
-                element.pics.forEach(picpath => {
-                    picpaths.push(cursorsDirUrl.pathname + picpath);
-                });
-                loadCursor(element.name, type, picpaths, element.id, element.preview);
-        });
-        })
-        .catch(error => {
-            console.error('Error loading JSON:', error);
-        });
+    }, `CURLAYOUT-${debugName}`)
 };

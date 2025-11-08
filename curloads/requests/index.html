@@ -10,14 +10,14 @@
 </head>
 <body>
     <div id="head">
-        <a href="../"><img src="../Assets/icons/home.svg" alt="" width="30px"></a>
+        <a href="../"><img src="../Assets/imgs/icons/home.svg" alt="Home Button" width="30px"></a>
         <h1>Requested Cursors</h1>
     </div>
     <div class="container" id="cursor-container"></div>
 
     <script type="module">
-        import {loadJSONCursors, requestCursorsJSONUrl} from "../Assets/apply-cursors.js";
-        loadJSONCursors(requestCursorsJSONUrl, "requests");
+        import {loadJSONCursors} from "../lib/cur-layout.js";
+        loadJSONCursors("requests");
     </script>
 
 </body>

@@ -4,6 +4,13 @@ import time
 import threading as thr
 import pyperclip as pyclip
 from pathlib import Path
+import sys
+
+if len(sys.argv) == 2:
+    with open("ip", 'w') as ipLogFile:
+        ipLogFile.write(sys.argv[1])
+
+    exit()
 
 def press(key: str) -> None:
     for k in key.split("+"):

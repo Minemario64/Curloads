@@ -1,14 +1,12 @@
+import {possibleCursorTypes, cursorTypeNames, globalCursorsJSONUrl, requestCursorsJSONUrl, curImgsDirUrl, curSetsDirUrl} from "../lib/globals.js";
+import {addBtnAnim} from "../../lib/globals.js";
+import {loadJSONRunFunc} from "../../lib/json-elements.js";
+
 const params = new URLSearchParams(window.location.search);
 const cursor = params.get("cur");
 const type = params.get("type");
-const possibleCursorTypes = ["mouse", "select", "busy", "text", "work-in-bg", "arrow-all", "arrow-nesw", "arrow-nwse", "arrow-ns", "arrow-ew"];
-const cursorTypeNames = ["Mouse", "Select", "Busy", "Text", "Work in Background", "Move", "Diagonal Arrow 1", "Diagonal Arrow 2", "Arrow Vertical", "Arrow Horizontal"];
 const headerTitle = document.getElementById("head").getElementsByTagName("h1").item(0);
 const backLnk = document.getElementById("head").getElementsByTagName("a").item(0);
-const globalCursorsJSONUrl = new URL('../Assets/cursors.json', import.meta.url).href;
-const requestCursorsJSONUrl = new URL('../Assets/requested-cursors.json', import.meta.url).href;
-const cursorsDirUrl = new URL('../api/assets/cursorImgs/', import.meta.url);
-const zipDirUrl = new URL("../api/assets/cursorSets/", import.meta.url);
 const container = document.getElementById("cursor-preview");
 
 function loadCursor(name, zippath, zipName, cursorPreviews) {
@@ -28,7 +26,7 @@ function loadCursor(name, zippath, zipName, cursorPreviews) {
         cursorName.style.letterSpacing = "2px";
         let cursorImg = document.createElement("img");
         cursorImg.className = 'cursor-preview';
-        cursorImg.src = cursorsDirUrl.pathname + cursorPreviews[type];
+        cursorImg.src = curImgsDirUrl.pathname + cursorPreviews[type];
         part.appendChild(cursorImg);
         part.appendChild(cursorName);
         setDetails.appendChild(part);
@@ -49,24 +47,7 @@ function loadCursor(name, zippath, zipName, cursorPreviews) {
         }, 500)
     });
 
-    btn.addEventListener("mousedown", () => {
-        btn.style.padding = "7px";
-        btn.style.margin = "6px";
-    });
-
-    btn.addEventListener('mouseleave', () => {
-        btn.style.padding = '10px';
-        btn.style.margin = "3px";
-    });
-
-    btn.addEventListener('mouseup', () => {
-        btn.style.padding = '13px';
-        btn.style.margin = "0px";
-        setTimeout(() => {
-            btn.style.padding = '10px';
-            btn.style.margin = '3px';
-        }, 150)
-    });
+    addBtnAnim(btn);
     block.appendChild(btn);
     const popup = document.getElementById('popup');
     const closePopup = document.getElementById('close-popup');
@@ -84,38 +65,39 @@ function loadCursor(name, zippath, zipName, cursorPreviews) {
     container.appendChild(block);
 };
 
-function loadJSONCursors(cursorsJSONUrl) {
-    fetch(cursorsJSONUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+function loadJSONCursors(type) {
+    switch (type) {
+        case "main":
+            var jsonUrl = globalCursorsJSONUrl;
+            var debug = "MAIN";
+            break;
+
+        case "requests":
+            var jsonUrl = requestCursorsJSONUrl;
+            var debug = "REQ";
+            break;
+    }
+    loadJSONRunFunc(jsonUrl, data => {
+        data.forEach(element => {
+            if (element.id === cursor) {
+                loadCursor(element.name, curSetsDirUrl.pathname + element.zip, element.downloadName, element.preview);
             }
-            return response.json();
         })
-        .then(data => {
-            data.forEach(element => {
-                if (element.id === cursor) {
-                    loadCursor(element.name, zipDirUrl.pathname + element.zip, element.downloadName, element.preview);
-            }
-        });
-        })
-        .catch(error => {
-            console.error('Error loading JSON:', error);
-        });
+    }, `CURPREVIEW-${debug}`)
 };
 
 switch (type) {
     case "main":
         backLnk.href = '../downloads/';
         if (cursor !== null) {
-            loadJSONCursors(globalCursorsJSONUrl);
+            loadJSONCursors(type);
         }
         break;
 
     case "requests":
         backLnk.href = "../requests/";
         if (cursor !== null) {
-            loadJSONCursors(requestCursorsJSONUrl);
+            loadJSONCursors(type);
         }
         break;
 }

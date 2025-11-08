@@ -1,11 +1,8 @@
-const rootUrl = new URL("../", import.meta.url);
-const ipLogUrl = new URL("../ip", import.meta.url,);
-const zipDirUrl = new URL("../api/temp/", import.meta.url);
-let getCursorsApiUrl = 'http://$[IPV4]:5000/cursors/';
-let zipApiUrl = 'http://$[IPV4]:5000/mix';
+import {rootUrl, ipLogUrl, mixerZipUrl, mixApiEndpoints} from "../lib/globals.js";
+import {addBtnAnim} from "../../lib/globals.js";
 
 function loadCursorImgsFromApi(filter, selectElement) {
-    fetch(getCursorsApiUrl + `imgs?mode=flatten&filter=${filter}`)
+    fetch(mixApiEndpoints.getCursors + `imgs?mode=flatten&filter=${filter}`)
     .then(response => {
         if (!response.ok) {
             throw new Error("GET Cursors response was not ok")
@@ -13,7 +10,7 @@ function loadCursorImgsFromApi(filter, selectElement) {
         return response.json();
     })
     .then(data => {
-        fetch(getCursorsApiUrl + `sets?mode=flatten&filter=${filter}`)
+        fetch(mixApiEndpoints.getCursors + `sets?mode=flatten&filter=${filter}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error("GET Paths response was not ok")
@@ -21,7 +18,7 @@ function loadCursorImgsFromApi(filter, selectElement) {
             return response.json();
         })
         .then(lookupPaths => {
-            fetch(getCursorsApiUrl + `names?mode=flatten&filter=${filter}`)
+            fetch(mixApiEndpoints.getCursors + `names?mode=flatten&filter=${filter}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("GET Names response was not ok")
@@ -90,9 +87,9 @@ fetch(ipLogUrl)
 })
 .then(ip => {
     console.log(ip);
-    getCursorsApiUrl = getCursorsApiUrl.replace("$[IPV4]", ip);
-    zipApiUrl = zipApiUrl.replace("$[IPV4]", ip);
-    console.log(getCursorsApiUrl);
+    mixApiEndpoints.getCursors = mixApiEndpoints.getCursors.replace("$[IPV4]", ip);
+    mixApiEndpoints.postMix = mixApiEndpoints.postMix.replace("$[IPV4]", ip);
+    console.log(mixApiEndpoints.getCursors);
 
     loadCursorImgsFromApi("mouse", mouseSelect);
     applyImgConstant(mouseSelect, mouseImg);
@@ -126,7 +123,7 @@ fetch(ipLogUrl)
             wib: wibSelect.value,
         };
 
-        fetch(zipApiUrl, {
+        fetch(mixApiEndpoints.postMix, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(Object.fromEntries(Object.entries(selections).filter(([_, path]) => !!path)))
@@ -139,7 +136,7 @@ fetch(ipLogUrl)
         })
         .then((zipPath) => {
             let lnk = document.createElement("a");
-            lnk.href = zipDirUrl.pathname + zipPath.url;
+            lnk.href = mixerZipUrl.pathname + zipPath.url;
             lnk.download = "mix-maker-cursors.zip";
             document.body.appendChild(lnk);
             lnk.click();
@@ -157,24 +154,7 @@ fetch(ipLogUrl)
         }
     });
 
-    downloadButton.addEventListener("mousedown", () => {
-        downloadButton.style.padding = "7px";
-        downloadButton.style.margin = "6px";
-    })
-
-    downloadButton.addEventListener('mouseleave', () => {
-        downloadButton.style.padding = '10px';
-        downloadButton.style.margin = "3px";
-    })
-
-    downloadButton.addEventListener('mouseup', () => {
-        downloadButton.style.padding = '13px';
-        downloadButton.style.margin = "0px";
-        setTimeout(() => {
-            downloadButton.style.padding = '10px';
-            downloadButton.style.margin = '3px';
-        }, 150)
-    })
+    addBtnAnim(downloadButton);
 })
 .catch(error => {
     console.error("IP Fetch Error:", error)

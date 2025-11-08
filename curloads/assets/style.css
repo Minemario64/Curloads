@@ -39,6 +39,8 @@ body {
 
 div#head {
     background-color: #132030;
+    align-items: center;
+    justify-content: space-between;
     margin: 0px 0px 0px 0px;
     padding: 1px 0px 0px 0px;
     border-bottom: 30px solid;
@@ -50,6 +52,30 @@ div#head>h1 {
     text-align: center;
     text-shadow: 0px 5px 0px #89aec49f;
     font-family: 'ConcertOne';
+}
+
+#home-btn {
+    position: absolute;
+    transform: translateX(50%) translateY(50%);
+    -webkit-transform: translateX(50%) translateY(50%);
+    -moz-transform: translateX(50%) translateY(50%);
+    -ms-transform: translateX(50%) translateY(50%);
+    -o-transform: translateX(50%) translateY(50%);
+}
+
+#home-btn>img {
+    opacity: 50%;
+    width: 30px;
+    transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1), width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -webkit-transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1), width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -moz-transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1), width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -ms-transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1), width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -o-transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1), width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+#home-btn>img:hover {
+    opacity: 100%;
+    width: 40px;
 }
 
 div.block {

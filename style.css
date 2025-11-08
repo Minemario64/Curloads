@@ -24,6 +24,11 @@
 }
 
 @font-face {
+    font-family: 'ConcertOne';
+    src: url(curloads/assets/ConcertOne-Regular.ttf);
+}
+
+@font-face {
     font-family: 'Coolvetica';
     src: url(arial_narrow_7.ttf);
     font-weight: 900;
@@ -74,7 +79,7 @@ div.block {
 }
 
 div.block>h1 {
-    font-family: 'Nabla';
+    font-family: 'ConcertOne';
     letter-spacing: 1px;
     text-align: center;
     font-size: 3em;

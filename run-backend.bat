@@ -1,3 +1,3 @@
 @echo off
-cd api
+cd curloads/api
 call python -u main.py
