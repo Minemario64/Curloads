@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Light Theme",
+        "id": "light",
+        "theme": {
+            "bg": "$IMG:win-default.jpg",
+            "mode": "light",
+            "accent": "blue"
+        },
+        "zip": ""
+    },
+    {
+        "name": "Dark Theme",
+        "id": "dark",
+        "theme": {
+            "bg": "$IMG:win-default.jpg",
+            "mode": "dark",
+            "accent": "blue"
+        },
+        "zip": ""
+    }
+]

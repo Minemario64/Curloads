@@ -1,0 +1,42 @@
+div#head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #132030;
+    margin: 0px 0px 0px 0px;
+    padding: 30px 0px 10px 50px;
+    border-bottom: 30px solid;
+    border-image: linear-gradient(to bottom, #132030 97%, var(--bg) 100%) 10;
+}
+
+img.cursor-preview {
+    width: 200px;
+}
+
+div.detail-bar {
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 8px;
+    max-height: max-content;
+    height: max-content;
+}
+
+div.detail-bar>img {
+    width: 200px;
+}
+
+div.block:hover>div.detail-bar {
+    max-height: max-content;
+}
+
+button {
+    transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -webkit-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -moz-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -ms-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -o-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    margin: 3px;
+}
