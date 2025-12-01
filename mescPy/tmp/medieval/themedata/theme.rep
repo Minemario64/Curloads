@@ -1,0 +1,10 @@
+{
+    "cursor": {
+        "busy": "busy.ani",
+        "mouse": "mouse.cur",
+        "select": "select.cur",
+        "text": "text.cur"
+    },
+    "pathname": "medieval",
+    "name": "Curloads - Medieval Cursors"
+}

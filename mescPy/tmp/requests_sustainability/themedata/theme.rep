@@ -1,0 +1,15 @@
+{
+    "pathname": "requests/sustainability",
+    "name": "Curloads - Sustainability Cursors",
+    "cursor": {
+        "mouse": "mouse.cur",
+        "select": "select.cur",
+        "busy": "busy.ani",
+        "wib": "wib.ani",
+        "arrow-all": "arrow-all.cur",
+        "arrow-nesw": "arrow-nesw.cur",
+        "arrow-nwse": "arrow-nwse.cur",
+        "arrow-ns": "arrow-ns.cur",
+        "arrow-ew": "arrow-ew.cur"
+    }
+}

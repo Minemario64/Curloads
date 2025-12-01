@@ -1,0 +1,10 @@
+{
+    "cursor": {
+        "busy": "busy.ani",
+        "mouse": "mouse.cur",
+        "select": "select.cur",
+        "work-in-bg": "work-in-bg.ani"
+    },
+    "pathname": "dino",
+    "name": "Curloads - Dino Cursors"
+}

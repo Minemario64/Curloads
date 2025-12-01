@@ -1,0 +1,10 @@
+{
+    "pathname": "requests/pig",
+    "name": "Curloads - Pig Cursors",
+    "cursor": {
+        "mouse": "mouse.cur",
+        "select": "select.ani",
+        "busy": "busy.ani",
+        "wub": "wib.ani"
+    }
+}

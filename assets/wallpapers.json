@@ -1,0 +1,14 @@
+[
+    {
+        "id": "dog",
+        "wallpaper": "animals/dog-wallpaper.jpg"
+    },
+    {
+        "id": "cat",
+        "wallpaper": "animals/cat-wallpaper.jpg"
+    },
+    {
+        "id": "gdsunset",
+        "wallpaper": "mesc/sunset.jpeg"
+    }
+]

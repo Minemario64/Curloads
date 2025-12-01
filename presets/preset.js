@@ -1,4 +1,4 @@
-import {presetsJSONUrl, processPath} from "../lib/globals.js";
+import {presetsJSONUrl, processPath, previewUrl} from "../lib/globals.js";
 import {loadJSONRunFunc} from "../lib/json-elements.js";
 
 const container = document.getElementById("presets-container");
@@ -9,17 +9,13 @@ function loadCursor(name, id, bgPath) {
     let title = document.createElement("h3");
     title.innerHTML = name;
     block.appendChild(title);
-    /*
-    FOR PREVIEW, WHEN MADE FOR PRESETS
-
     let link = document.createElement("a");
-    link.href = previewUrl + `?cur=${id}&type=${previewType}`;
-    */
+    link.href = previewUrl.href + `?theme=${id}`;
     let img = document.createElement("img");
     img.src = bgPath;
-    img.style.width = "200px";
-    img.style.borderRadius = "20px";
-    block.appendChild(img);
+    img.className = "non-cursor";
+    link.appendChild(img)
+    block.appendChild(link);
     container.appendChild(block);
 };
 

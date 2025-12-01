@@ -1,0 +1,11 @@
+{
+    "cursor": {
+        "mouse": "mouse.ani",
+        "select": "select.ani",
+        "busy": "load.ani",
+        "text": "text.ani",
+        "wib": "work-in-bg.ani"
+    },
+    "pathname": "mix",
+    "name": "Curloads - Mix"
+}

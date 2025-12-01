@@ -64,6 +64,15 @@ div#head>h1 {
     font-palette: --title;
 }
 
+button {
+    transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -webkit-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -moz-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -ms-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    -o-transition: padding 0.05s cubic-bezier(0.33, 1, 0.68, 1), margin-top 0.05s cubic-bezier(0.33, 1, 0.68, 1);
+    margin: 3px;
+}
+
 div.block {
     border-radius: 30px;
     -webkit-border-radius: 30px;
@@ -76,6 +85,21 @@ div.block {
     margin: 10px 10px;
     backdrop-filter: blur(30px);
     text-align: center;
+}
+
+div.centered {
+    text-align: center;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+}
+
+div.half-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
 }
 
 div.block>h1 {

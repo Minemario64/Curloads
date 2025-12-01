@@ -20,7 +20,8 @@ def press(key: str) -> None:
         pyag.keyUp(k)
 
 press("winLeft+altLeft+ ")
-press("up")
+for _ in range(18):
+    press("down")
 press("\n")
 time.sleep(0.75)
 for _ in range(10):

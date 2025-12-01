@@ -1,4 +1,4 @@
-import {addBtnAnim, presetsJSONUrl, presetsDirUrl, envVarPaths, processPath, possibleThemeAttrs, themeAttrNames} from "../../lib/globals.js";
+import {addBtnAnim, presetsJSONUrl, presetsDirUrl, processPath, possibleThemeAttrs, themeAttrNames, themeAttrResolve} from "../../lib/globals.js";
 import {loadJSONRunFunc} from "../../lib/json-elements.js";
 
 const params = new URLSearchParams(window.location.search);
@@ -6,7 +6,7 @@ const theme = params.get("theme");
 const headerTitle = document.getElementById("head").getElementsByTagName("h1").item(0);
 const container = document.getElementById("theme-preview");
 
-function loadCursor(name, theme) {
+function loadCursor(name, theme, zippath, zipName) {
     document.title = `Viskit - ${name}`;
     headerTitle.innerHTML = name;
     let block = document.createElement("div");
@@ -21,18 +21,40 @@ function loadCursor(name, theme) {
         let cursorName = document.createElement("h3");
         cursorName.innerHTML = themeAttrNames[possibleThemeAttrs.indexOf(type)];
         cursorName.style.letterSpacing = "2px";
-        if (type === "bg") {
-            let bgImg = document.createElement("img");
-            bgImg.className = 'cursor-preview';
-            bgImg.src = processPath(theme[type], new URL("../../assets/themes/presets", import.meta.url));
-            part.appendChild(bgImg);
+        switch (type) {
+            case "bg":
+                let bgImg = document.createElement("img");
+                bgImg.className = 'cursor-preview';
+                bgImg.src = processPath(theme[type], presetsDirUrl);
+                part.appendChild(bgImg);
+                break;
+
+            case "mode":
+                let txt = document.createElement("p");
+                txt.innerHTML = theme[type];
+                txt.style.fontFamily = "'ConcertOne'";
+                txt.style.fontSize = "3em";
+                txt.style.color = themeAttrResolve(theme[type], "mode");
+                txt.style.textShadow = "1px 1px 0px #aaa, -1px 1px 0px #aaa, 1px -1px 0px #aaa, -1px -1px 0px #aaa";
+                part.appendChild(txt);
+                break;
+
+            case "accent":
+                let colorSpace = document.createElement("div");
+                colorSpace.style.backgroundColor = themeAttrResolve(theme[type], "accent");
+                colorSpace.className = 'centered';
+                colorSpace.style.width = "200px";
+                colorSpace.style.height = "100px";
+                colorSpace.style.borderRadius = "20px";
+                part.appendChild(colorSpace);
+                break;
         }
         part.appendChild(cursorName);
         setDetails.appendChild(part);
     }
     block.appendChild(setDetails);
     let btn = document.createElement("button");
-    btn.innerHTML = "Download Cursor Set";
+    btn.innerHTML = "Download Theme";
     btn.addEventListener("click", () => {
         /*
         const lnk = document.createElement("a");

@@ -59,3 +59,39 @@ img:not(.non-cursor) {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
+
+div#presets-container>div.block>a>img {
+    width: 200px;
+    border-radius: 20px;
+    transition: width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -webkit-transition: width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -moz-transition: width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -ms-transition: width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -o-transition: width 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+div#presets-container>div.block:hover>a>img {
+    width: 250px;
+}
+
+div#wallpapers-container>div.block>img {
+    height: 200px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transition: height 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -webkit-transition: height 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -moz-transition: height 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -ms-transition: height 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    -o-transition: height 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+div#wallpapers-container>div.block:hover>img {
+    height: 250px;
+}

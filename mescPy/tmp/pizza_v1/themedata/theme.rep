@@ -1,0 +1,10 @@
+{
+    "cursor": {
+        "busy": "busy.ani",
+        "mouse": "mouse.ani",
+        "select": "select.ani",
+        "text": "text.cur"
+    },
+    "pathname": "pizza/v1",
+    "name": "Curloads - Pizza Cursors (Old)"
+}

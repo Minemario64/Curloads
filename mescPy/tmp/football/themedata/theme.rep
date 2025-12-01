@@ -1,0 +1,9 @@
+{
+    "cursor": {
+        "busy": "busy.ani",
+        "mouse": "mouse.cur",
+        "select": "select.ani"
+    },
+    "pathname": "football",
+    "name": "Curloads - Football Cursors"
+}
