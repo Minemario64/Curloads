@@ -27,16 +27,12 @@ export const cursorTypeNames = [
 export const globalCursorsJSONUrl = new URL('../Assets/cursors.json', import.meta.url).href;
 export const requestCursorsJSONUrl = new URL('../Assets/requested-cursors.json', import.meta.url).href;
 
-export const curImgsDirUrl = new URL('../api/assets/cursorImgs/', import.meta.url);
-export const curSetsDirUrl = new URL("../api/assets/cursorSets/", import.meta.url);
-
-export const ipLogUrl = new URL("../../ip", import.meta.url);
+export const curImgsDirUrl = new URL('../../api/assets/cursorImgs/', import.meta.url);
+export const curSetsDirUrl = new URL("../../api/assets/cursorSets/", import.meta.url);
 
 export const rootUrl = new URL("../", import.meta.url);
 
-export const mixerZipUrl = new URL("../api/temp/", import.meta.url);
-
 export const mixApiEndpoints = {
-    getCursors: 'http://$[IPV4]:5000/cursors/',
-    postMix: 'http://$[IPV4]:5000/mix'
+    getCursors: 'http://$[IPV4]:5000/curloads/cursors/',
+    postMix: 'http://$[IPV4]:5000/curloads/mix'
 }

@@ -1,9 +1,9 @@
-import {wallpapersJSONUrl, wallpapersDirUrl, processPath, icons, addBtnAnim} from "../lib/globals.js";
+import {wallpapersJSONUrl, wallpapersDirUrl, processPath, icons, addBtnAnim, initApiRequests, zippedThemeDirUrl} from "../lib/globals.js";
 import {loadJSONRunFunc} from "../lib/json-elements.js";
 
 const container = document.getElementById("wallpapers-container");
 
-function loadCursor(id, wallpaperPath) {
+function loadCursor(id, wallpaperPath, downloadName, apiEndpoints) {
     let block = document.createElement("div");
     block.className = 'block';
 
@@ -29,6 +29,17 @@ function loadCursor(id, wallpaperPath) {
     let downloadBtn = document.createElement("button");
     downloadBtn.appendChild(downloadImg);
     addBtnAnim(downloadBtn);
+    downloadBtn.addEventListener("click", () => {
+        apiEndpoints.wallpaperDownload(id)
+        .then((zipPath) => {
+            let lnk = document.createElement("a");
+            lnk.href = zippedThemeDirUrl.pathname + zipPath.url;
+            lnk.download = downloadName;
+            document.body.appendChild(lnk);
+            lnk.click();
+            document.body.removeChild(lnk);
+        });
+    })
 
     let applyThemeMakerBtn = document.createElement("button");
     applyThemeMakerBtn.appendChild(applyThemeMakerImg);
@@ -40,10 +51,13 @@ function loadCursor(id, wallpaperPath) {
     container.appendChild(block);
 };
 
-loadJSONRunFunc(wallpapersJSONUrl, data => {
-    data.forEach(element => {
-        let wallpaperPath = processPath(element.wallpaper, wallpapersDirUrl);
-        console.log(wallpaperPath);
-        loadCursor(element.id, wallpaperPath);
-    });
-}, "WALLPAPER-PAGE")
+initApiRequests("WALLPAPER-PAGE")
+.then(endpointFuncs => {
+    loadJSONRunFunc(wallpapersJSONUrl, data => {
+        data.forEach(element => {
+            let wallpaperPath = processPath(element.wallpaper, wallpapersDirUrl);
+            console.log(wallpaperPath);
+            loadCursor(element.id, wallpaperPath, element.download, endpointFuncs);
+        });
+    }, "WALLPAPER-PAGE")
+});

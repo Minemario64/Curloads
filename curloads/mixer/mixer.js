@@ -1,5 +1,5 @@
-import {rootUrl, ipLogUrl, mixerZipUrl, mixApiEndpoints} from "../lib/globals.js";
-import {addBtnAnim} from "../../lib/globals.js";
+import {rootUrl, mixApiEndpoints} from "../lib/globals.js";
+import {addBtnAnim, ipLogUrl, zippedThemeDirUrl} from "../../lib/globals.js";
 
 function loadCursorImgsFromApi(filter, selectElement) {
     fetch(mixApiEndpoints.getCursors + `imgs?mode=flatten&filter=${filter}`)
@@ -136,7 +136,7 @@ fetch(ipLogUrl)
         })
         .then((zipPath) => {
             let lnk = document.createElement("a");
-            lnk.href = mixerZipUrl.pathname + zipPath.url;
+            lnk.href = zippedThemeDirUrl.pathname + zipPath.url;
             lnk.download = "mix-maker-cursors.zip";
             document.body.appendChild(lnk);
             lnk.click();

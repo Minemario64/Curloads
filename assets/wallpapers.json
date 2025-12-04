@@ -1,14 +1,20 @@
 [
     {
         "id": "dog",
-        "wallpaper": "animals/dog-wallpaper.jpg"
+        "name": "Dog Wallpaper",
+        "wallpaper": "animals/dog-wallpaper.jpg",
+        "download": "dog-wallpaper-theme.zip"
     },
     {
         "id": "cat",
-        "wallpaper": "animals/cat-wallpaper.jpg"
+        "name": "Cat Wallpaper",
+        "wallpaper": "animals/cat-wallpaper.jpg",
+        "download": "cat-wallpaper-theme.zip"
     },
     {
         "id": "gdsunset",
-        "wallpaper": "mesc/sunset.jpeg"
+        "name": "Smooth Sunset Wallpaper",
+        "wallpaper": "mesc/sunset.jpeg",
+        "download": "sunset-wallpaper-theme.zip"
     }
 ]

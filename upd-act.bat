@@ -1,5 +1,5 @@
 @echo off
 cd mescPy
-mklink /J api ..\curloads\api
+mklink /J api ..\api
 call python updateActivate.py
 rmdir api
